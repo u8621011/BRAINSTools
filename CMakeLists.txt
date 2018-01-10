@@ -1,5 +1,13 @@
 cmake_minimum_required(VERSION 3.5.0) ## Tying to Slicer as of 2017-08-04
 
+if(Slicer_BUILD_I18N_SUPPORT)
+  message(STATUS "[DTC] - BRAINSTool got Slicer_BUILD_I18N_SUPPORT")
+else()
+  message(STATUS "[DTC] - BRAINSTool not aware of Slicer_BUILD_I18N_SUPPORT")
+endif()
+
+message(STATUS "[DTC] - PROJECT_NAME in BRAINSTool: ${PROJECT_NAME}")
+
 if(POLICY CMP0048)
   cmake_policy(SET CMP0048 OLD) #OLD project() behavior for setting VERSION variable
 endif()
